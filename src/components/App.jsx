@@ -6,18 +6,18 @@ import  Notification from "./Notification";
 
 export const App =() => {
 
-    const [good, setIsGood] = useState(0);
-    const [neutral, setIsNeutral] = useState(0);
-    const [bad, setIsBad] = useState(0);
+    const [good, setGood] = useState(0);
+    const [neutral, setNeutral] = useState(0);
+    const [bad, setBad] = useState(0);
     const options = ['Good', 'Neutral', 'Bad'];
 
  const onLeaveFeedback = type => {
      switch (type) {
-       case 'Good': setIsGood(good + 1);
+       case 'Good': setGood(prevState => prevState +1);
         break;
-       case 'Neutral': setIsNeutral(neutral + 1);
+       case 'Neutral': setNeutral(prevState => prevState +1);
         break;
-       case 'Bad': setIsBad(bad + 1);
+       case 'Bad': setBad(prevState => prevState +1);
         break;
       default:
         return;
